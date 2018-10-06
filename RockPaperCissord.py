@@ -2,31 +2,36 @@ from random import randint
 
 Game = ["Rock", "Paper", "Scissors"]
 
-computer = Game[randint(0, 2)]
+Npc = Game[randint(0, 2)]
 
 Player = False
+print("Welcome to Rock Paper Scissors Game !!")
+print("If you want to exit, just type 'exit' ")
+
 
 while Player == False:
-    Player = input()
-    if Player == computer:
+    Player = input().capitalize()
+    if Player == Npc:
         print("Equal")
 
     elif Player == "Rock":
-        if computer == "Paper":
+        if Npc == "Paper":
             print("you lost by the paper")
-        elif computer == "Scissors":
+        elif Npc == "Scissors":
             print("you won, you smashed the scissors with the rock")
 
     elif Player == "Paper":
-        if computer == "Rock":
+        if Npc == "Rock":
             print("you won by wrapping the rock with the paper")
-        elif computer == "Scissors":
+        elif Npc == "Scissors":
             print("you lost and get cut")
 
     elif Player == "Scissors":
-        if computer == "Rock":
+        if Npc == "Rock":
             print("you lost by the rock")
-        elif computer == "Paper":
+        elif Npc == "Paper":
             print("you won ")
+    elif Player == "exit":
+        break
     Player = False
-    computer = Game[randint(0,2)]
+    Npc = Game[randint(0,2)]
